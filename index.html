@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARRS Silks Header</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --maroon:#7a0c0c;
+  --gold:#f5c16c;
+  --cream:#fde4bc;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif}
+
+/* ANNOUNCEMENT */
+.announcement{
+  background:var(--maroon);
+  color:#fff;
+  text-align:center;
+  padding:8px;
+  font-size:14px;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  transition:.3s;
+}
+header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
+
+.header-top{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:14px 24px;
+  border-bottom: 1px solid gray;
+}
+
+/* LOGO CENTER */
+.logo{display:flex;justify-content:center}
+.logo img{height:76px; object-fit: contain; width: 300px;}
+
+/* ICONS */
+.left-icons,
+.right-icons{
+  display:flex;
+  align-items:center;
+  gap:26px;
+  color:var(--maroon);
+  font-size:15px;
+}
+
+.left-icons{justify-content: start;}
+.right-icons{justify-content: end;}
+
+.left-icons span{display:flex;gap:6px;align-items:center}
+.right-icons i{cursor:pointer;font-size:17px}
+
+/* MENU BUTTON */
+.menu-btn{display:none;font-size:22px;cursor:pointer}
+
+/* NAV */
+.navbar{border-top:1px solid #eee}
+.navbar ul{
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  padding:14px 0;
+  list-style:none;
+}
+.navbar li{
+  font-family:'Playfair Display',serif;
+  font-size:15px;
+  color:var(--maroon);
+}
+.navbar li::after{
+  content:" 👑";
+  color:var(--gold);
+  font-size:12px;
+}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  left:-100%;
+  width:85%;
+  height:100%;
+  background:var(--cream);
+  z-index:2000;
+  transition:.4s;
+  padding:20px;
+}
+.mobile-menu.active{left:0}
+
+.mobile-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.mobile-menu ul{list-style:none}
+.mobile-menu li{
+  padding:14px 6px;
+  border-bottom:1px solid #e3caa0;
+  font-size:16px;
+}
+
+.mobile-footer{margin-top:25px}
+.currency{display:flex;gap:10px;margin-bottom:20px}
+.bottom-icons{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+}
+
+/* SEARCH POPUP */
+.search-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:3000;
+}
+.search-box{
+  background:#fff;
+  width:90%;
+  max-width:500px;
+  padding:25px;
+  border-radius:10px;
+}
+.search-box input{
+  width:100%;
+  padding:14px;
+  font-size:16px;
+  border:1px solid #ccc;
+  outline:none;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:#fff;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 5px 15px rgba(0,0,0,.3);
+  z-index:4000;
+}
+
+/* RESPONSIVE */
+@media(max-width:992px){
+  .navbar{display:none}
+  .menu-btn{display:block}
+  .left-icons span{display:none}
+}
+
+@media screen and (min-width:320px) and (max-width:768px){
+    .demo{
+        display: none;
+    }
+}
+
+/* hero section */
+.hero-carousel{
+  position:relative;
+  width:100%;
+  height:90vh;
+  overflow:hidden;
+}
+
+.carousel-track{
+  display:flex;
+  height:100%;
+  transition:transform 0.6s ease;
+}
+
+.slide{
+  min-width:100%;
+  height:100%;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.slide::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  /* background:linear-gradient(to right, rgba(0,0,0,.45), rgba(0,0,0,.1)); */
+}
+
+.content{
+  position:absolute;
+  top:50%;
+  left:8%;
+  transform:translateY(-50%);
+  color:#fff;
+  z-index:2;
+}
+
+.content h2{
+  font-size:3.2rem;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  background:#7a0c0c;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.5);
+  border:none;
+  color:#fff;
+  font-size:28px;
+  padding:10px 16px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.prev{left:20px;}
+.next{right:20px;}
+
+.dots{
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  text-align:center;
+  z-index:5;
+}
+
+.dots span{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#ccc;
+  margin:0 5px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.dots span.active{
+  background:#7a0c0c;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-carousel{height:40vh;}
+  .content h2{font-size:2rem;}
+  .slide img{object-position: center; object-fit: cover;}
+}
+
+/* about section */
+.welcome-srv{
+  position:relative;
+  background:#fbf7f2;
+  padding:90px 20px 0;
+  overflow:hidden;
+}
+
+.welcome-content{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.crown{
+  font-size:32px;
+  color:#d4af37;
+  margin-bottom:12px;
+}
+
+.welcome-content h2{
+  font-family:'Georgia', serif;
+  font-size:38px;
+  letter-spacing:1px;
+  color:#7a0c0c;
+  margin-bottom:25px;
+}
+
+.welcome-content p{
+  font-size:17px;
+  line-height:1.9;
+  color:#222;
+  max-width:820px;
+  margin:auto;
+}
+
+/* Decorative Mandalas */
+.mandala{
+  position:absolute;
+  width:280px;
+  opacity:.25;
+}
+
+.mandala.left{
+  left:-80px;
+  top:50px;
+}
+
+.mandala.right{
+  right:-80px;
+  top:80px;
+}
+
+/* Offer Strip */
+.offer-strip{
+  margin-top:80px;
+  background:#fde6c5;
+  overflow:hidden;
+  border-top:1px solid #e5c28a;
+}
+
+.offer-track{
+  display:flex;
+  gap:40px;
+  padding:18px 0;
+  animation:scroll 25s linear infinite;
+  white-space:nowrap;
+}
+
+.offer-track span{
+  font-weight:600;
+  color:#8a1a1a;
+  font-size:16px;
+  letter-spacing:.5px;
+}
+
+@keyframes scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .welcome-srv{
+    padding:60px 16px 0;
+  }
+
+  .welcome-content h2{
+    font-size:26px;
+  }
+
+  .welcome-content p{
+    font-size:15px;
+  }
+
+  .mandala{
+    width:180px;
+  }
+}
+
+/* collection page  */
+.collections{
+  background:#7a0c0c;
+  padding:80px 30px;
+  color:#fff;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-family:'Georgia', serif;
+  font-size:36px;
+  color:#f5c16c;
+  letter-spacing:1px;
+}
+
+.section-title p{
+  margin-top:10px;
+  color:#f1e2c6;
+}
+
+.ornament{
+  margin:0 10px;
+}
+
+.collection-wrapper{
+  position:relative;
+}
+
+.collection-track{
+  display:flex;
+  gap:30px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:10px;
+}
+
+.collection-track::-webkit-scrollbar{
+  display:none;
+}
+
+.collection-card{
+  min-width:380px;
+  height:480px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.3);
+}
+
+.collection-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+
+.collection-card:hover img{
+  transform:scale(1.05);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,.15));
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom:25px;
+}
+
+.overlay h3{
+  font-family:'Georgia', serif;
+  font-size:22px;
+  letter-spacing:1px;
+  color:#f5e6c8;
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#f5c16c;
+  border:none;
+  color:#7a0c0c;
+  font-size:22px;
+  width:42px;
+  height:42px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.arrow.left{left:-10px;}
+.arrow.right{right:-10px;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .collections{
+    padding:60px 15px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .collection-card{
+    min-width:260px;
+    height:360px;
+  }
+
+  .arrow{
+    display:none;
+  }
+}
+
+.product-carousel-section{
+  padding:50px 20px;
+  background:#fdf8f5;
+  font-family:'Segoe UI', sans-serif;
+}
+
+.section-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-header h2{
+  color:#7a0c0c;
+  font-size:28px;
+  font-family:'Georgia', serif;
+  margin-bottom:5px;
+}
+
+.section-header p{
+  color:#333;
+}
+
+.carousel-wrapper{
+  position:relative;
+}
+
+.carousel-track{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:10px;
+}
+
+.carousel-track::-webkit-scrollbar{
+  display:none;
+}
+
+.product-card{
+  min-width:250px;
+  background:#fff;
+  border-radius:5px;
+  text-align:center;
+  box-shadow:0 4px 8px rgba(0,0,0,.1);
+  flex-shrink:0;
+  cursor:pointer;
+  transition:transform .3s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+}
+
+.product-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+}
+
+.product-card h3{
+  font-size:16px;
+  margin:10px 5px 5px;
+  color:#333;
+}
+
+.product-card .price{
+  font-size:15px;
+  margin-bottom:10px;
+  color:#7a0c0c;
+}
+
+.product-card .original{
+  text-decoration:line-through;
+  color:#999;
+  margin-right:5px;
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#f5c16c;
+  border:none;
+  color:#7a0c0c;
+  font-size:22px;
+  width:42px;
+  height:42px;
+  cursor:pointer;
+  z-index:5;
+  border-radius:50%;
+}
+
+.arrow.left{left:-15px;}
+.arrow.right{right:-15px;}
+
+@media(max-width:768px){
+  .product-card{
+    min-width:180px;
+  }
+  .arrow{
+    display:none;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+✨ Heritage Since <b>1919</b> | A Legacy of Pure Silk, Crafted with Passion & Pride
+</div>
+
+<header id="mainHeader">
+  <div class="header-top">
+
+    <!-- LEFT -->
+    <div class="left-icons">
+      <i class="fa-solid fa-bars menu-btn" onclick="openMenu()"></i>
+      <span><i class="fa-regular fa-map"></i> Find a Store</span>
+      <span><i class="fa-solid fa-box"></i> Track Orders</span>
+      <span><i class="fa-regular fa-heart"></i> Support</span>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="./asset/main logo.png">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-icons">
+      <i class="fa-solid fa-magnifying-glass demo" onclick="openSearch()"></i>
+      <i class="fa-regular fa-user"></i>
+      <i class="fa-regular fa-heart demo"></i>
+      <i class="fa-solid fa-bag-shopping demo"></i>
+    </div>
+
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li>NEW ARRIVALS</li>
+      <li>WEDDING SAREES</li>
+      <li>KANCHIPURAM SAREES</li>
+      <li>FANCY SAREES</li>
+      <li>CATEGORIES</li>
+      <li>ABOUT US</li>
+      <li>GIFT CARDS</li>
+      <li>CONTACT US</li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-header">
+    <h3>MENU</h3>
+    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+  </div>
+
+  <ul>
+    <li>New Arrivals</li>
+    <li>Wedding Sarees</li>
+    <li>Kanchipuram Sarees</li>
+    <li>Fancy Sarees</li>
+    <li>Categories</li>
+    <li>About Us</li>
+    <li>Gift Cards</li>
+    <li>Contact Us</li>
+  </ul>
+
+  <div class="mobile-footer">
+    <div class="currency">🇮🇳 INR <i class="fa-solid fa-plus"></i></div>
+    <div class="bottom-icons">
+      <span><i class="fa-regular fa-map"></i> Find Store</span>
+      <span><i class="fa-regular fa-heart"></i> Support</span>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-overlay" id="searchBox">
+  <div class="search-box">
+    <input type="text" placeholder="Search Sarees, Collections...">
+  </div>
+</div>
+
+<!-- hero secton -->
+ <section class="hero-carousel">
+  <div class="carousel-track">
+
+    <div class="slide active">
+      <img src="./asset/1.svg" alt="">
+    </div>
+
+    <div class="slide">
+      <img src="./asset/2.svg" alt="">
+    </div>
+
+    <div class="slide">
+      <img src="./asset/3.svg" alt="">
+    </div>
+
+    <div class="slide">
+      <img src="./asset/4.svg" alt="">
+    </div>
+
+  </div>
+
+  <!-- Navigation -->
+  <button class="nav prev">&#10094;</button>
+  <button class="nav next">&#10095;</button>
+
+  <!-- Dots -->
+  <div class="dots"></div>
+</section>
+
+<!-- about section -->
+ <section class="welcome-srv">
+
+  <!-- Decorative Motifs -->
+  <img src="left-mandala.png" class="mandala left" alt="">
+  <img src="right-mandala.png" class="mandala right" alt="">
+
+  <div class="welcome-content">
+    <img src="./asset/main logo.png" width="200px" style="margin-bottom: 10px;">
+    <h2>WELCOME TO SRI PADMA VILAS</h2>
+
+    <p>
+      For over <strong>Centuary</strong>, Sri Padma Vilas Silk Sarees has been a symbol of timeless elegance and authentic
+      South Indian craftsmanship. Every saree we offer is a handwoven masterpiece,
+      rooted in heritage and shaped by generations of skilled artisans.
+      Whether you're a bride searching for the perfect Kanjivaram or a lover of fine silk,
+      Sri Padma Vilas brings you sarees that do more than drape – they celebrate identity, culture,
+      and every cherished moment.
+    </p>
+  </div>
+
+  <!-- Offer Marquee -->
+  <div class="offer-strip">
+    <div class="offer-track">
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+      <span>🪔</span>
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+      <span>🪔</span>
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+      <span>🪔</span>
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+      <span>🪔</span>
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+      <span>🪔</span>
+      <span>UPTO 10% OFFER</span>
+      <span>✴</span>
+      <span>FESTIVAL OFFER</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- collection -->
+ <section class="collections">
+
+  <div class="section-title">
+    <h2>
+      <span class="ornament">❧</span>
+      OUR CATEGORIES
+      <span class="ornament">❧</span>
+    </h2>
+    <p>Welcome to the world of elegance & craftsmanship</p>
+  </div>
+
+  <div class="collection-wrapper">
+    <button class="arrow left">&#10094;</button>
+
+    <div class="collection-track">
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Kanjivaram Silks</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Silk Sarees</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Heritage Sarees</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Designer Sarees</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Silk Sarees</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Heritage Sarees</h3>
+        </div>
+      </div>
+
+      <div class="collection-card">
+        <img src="./asset/COLLECTION.png" alt="">
+        <div class="overlay">
+          <h3>Designer Sarees</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="arrow right">&#10095;</button>
+  </div>
+
+</section>
+
+
+<!-- product start -->
+ <section class="product-carousel-section">
+  <div class="section-header">
+    <h2>Silks by Occasion</h2>
+    <p>Perfect sarees for every special moment</p>
+  </div>
+
+  <div class="carousel-wrapper">
+    <button class="arrow left">&#10094;</button>
+    
+    <div class="carousel-track">
+
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <img src="orange-green-silk.jpg" alt="Orange and Green 9 Yards Pure Silk Saree">
+        <h3>Orange and Green 9 Yards Pure Silk Saree</h3>
+        <p class="price"><span class="original">₹10,650.00</span> ₹9,585.00</p>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <img src="light-green-brick.jpg" alt="Light Green and Brick 9 Yards Pure Silk Saree">
+        <h3>Light Green and Brick 9 Yards Pure Silk Saree</h3>
+        <p class="price"><span class="original">₹10,450.00</span> ₹9,405.00</p>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <img src="lotus-pink.jpg" alt="Lotus Pink and Dark Green 9 Yards Pure Silk Saree">
+        <h3>Lotus Pink and Dark Green 9 Yards Pure Silk Saree</h3>
+        <p class="price"><span class="original">₹11,950.00</span> ₹10,755.00</p>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="product-card">
+        <img src="orange-silk.jpg" alt="Orange 9 Yards Pure Silk Saree">
+        <h3>Orange 9 Yards Pure Silk Saree</h3>
+        <p class="price"><span class="original">₹11,950.00</span> ₹10,755.00</p>
+      </div>
+
+      <!-- Product Card 5 -->
+      <div class="product-card">
+        <img src="product5.jpg" alt="Product 5">
+        <h3>Product 5 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+      <!-- Product Card 6 -->
+      <div class="product-card">
+        <img src="product6.jpg" alt="Product 6">
+        <h3>Product 6 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+      <!-- Product Card 7 -->
+      <div class="product-card">
+        <img src="product7.jpg" alt="Product 7">
+        <h3>Product 7 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+      <!-- Product Card 8 -->
+      <div class="product-card">
+        <img src="product8.jpg" alt="Product 8">
+        <h3>Product 8 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+      <!-- Product Card 9 -->
+      <div class="product-card">
+        <img src="product9.jpg" alt="Product 9">
+        <h3>Product 9 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+      <!-- Product Card 10 -->
+      <div class="product-card">
+        <img src="product10.jpg" alt="Product 10">
+        <h3>Product 10 Name</h3>
+        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
+      </div>
+
+    </div>
+
+    <button class="arrow right">&#10095;</button>
+  </div>
+</section>
+
+
+
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
+  <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=ffffff" width="30px">
+</a>
+
+<script>
+function openMenu(){
+  document.getElementById("mobileMenu").classList.add("active");
+}
+function closeMenu(){
+  document.getElementById("mobileMenu").classList.remove("active");
+}
+
+function openSearch(){
+  document.getElementById("searchBox").style.display="flex";
+}
+document.getElementById("searchBox").onclick=e=>{
+  if(e.target.id==="searchBox") e.target.style.display="none";
+};
+
+window.addEventListener("scroll",()=>{
+  document.getElementById("mainHeader")
+    .classList.toggle("sticky",window.scrollY>20);
+});
+</script>
+
+
+<!-- hero section -->
+ <script>
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const dotsContainer = document.querySelector('.dots');
+
+let index = 0;
+let startX = 0;
+let isDragging = false;
+
+// Create dots
+slides.forEach((_, i)=>{
+  const dot = document.createElement('span');
+  dot.addEventListener('click', ()=>moveToSlide(i));
+  dotsContainer.appendChild(dot);
+});
+updateDots();
+
+function moveToSlide(i){
+  index = i;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  updateDots();
+}
+
+function updateDots(){
+  document.querySelectorAll('.dots span').forEach((dot,i)=>{
+    dot.classList.toggle('active', i===index);
+  });
+}
+
+nextBtn.onclick = ()=>moveToSlide((index+1)%slides.length);
+prevBtn.onclick = ()=>moveToSlide((index-1+slides.length)%slides.length);
+
+// Auto slide
+setInterval(()=>nextBtn.click(), 5000);
+
+// Drag / Swipe
+track.addEventListener('mousedown', e=>{
+  isDragging=true;
+  startX=e.pageX;
+});
+
+track.addEventListener('mouseup', e=>{
+  if(!isDragging) return;
+  let diff = e.pageX-startX;
+  if(diff>80) prevBtn.click();
+  if(diff<-80) nextBtn.click();
+  isDragging=false;
+});
+
+track.addEventListener('touchstart', e=>{
+  startX=e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', e=>{
+  let diff = e.changedTouches[0].clientX-startX;
+  if(diff>60) prevBtn.click();
+  if(diff<-60) nextBtn.click();
+});
+</script>
+
+<!-- collection scroll -->
+ <script>
+const track1 = document.querySelector('.collection-track');
+const left = document.querySelector('.arrow.left');
+const right = document.querySelector('.arrow.right');
+
+left.onclick = () => {
+  track1.scrollBy({ left: -400, behavior: 'smooth' });
+};
+
+right.onclick = () => {
+  track1.scrollBy({ left: 400, behavior: 'smooth' });
+};
+
+// Drag to scroll (desktop)
+let isDown = false;
+let startX1;
+let scrollLeft;
+
+track.addEventListener('mousedown', e => {
+  isDown = true;
+  startX1 = e.pageX - track.offsetLeft;
+  scrollLeft = track1.scrollLeft;
+});
+
+track1.addEventListener('mouseleave', () => isDown = false);
+track1.addEventListener('mouseup', () => isDown = false);
+
+track1.addEventListener('mousemove', e => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - track1.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  track1.scrollLeft = scrollLeft - walk;
+});
+</script>
+
+<!-- product start -->
+ <script>
+const track2 = document.querySelector('.carousel-track');
+const left = document.querySelector('.arrow.left');
+const right = document.querySelector('.arrow.right');
+
+left.onclick = () => {
+  track2.scrollBy({ left: -300, behavior: 'smooth' });
+};
+
+right.onclick = () => {
+  track2.scrollBy({ left: 300, behavior: 'smooth' });
+};
+
+// Drag / Swipe to scroll
+let isDown0 = false;
+let startX0;
+let scrollLeft0;
+
+track2.addEventListener('mousedown', e => {
+  isDown0 = true;
+  startX0 = e.pageX - track2.offsetLeft;
+  scrollLeft0 = track2.scrollLeft;
+});
+
+track2.addEventListener('mouseleave', () => isDown0 = false);
+track2.addEventListener('mouseup', () => isDown0 = false);
+track2.addEventListener('mousemove', e => {
+  if(!isDown0) return;
+  e.preventDefault();
+  const x = e.pageX - track2.offsetLeft;
+  const walk = (x - startX0) * 1.5;
+  track2.scrollLeft = scrollLeft0 - walk;
+});
+
+// Mobile touch swipe
+track2.addEventListener('touchstart', e => startX0 = e.touches[0].pageX - track2.offsetLeft);
+track2.addEventListener('touchmove', e => {
+  const x = e.touches[0].pageX - track2.offsetLeft;
+  track2.scrollLeft -= (x - startX0);
+  startX0 = x;
+});
+</script>
+<script>
+const tabs = document.querySelectorAll('.tab');
+const products = document.querySelectorAll('.product-card');
+const track6 = document.querySelector('.carousel-track');
+const left = document.querySelector('.arrow.left');
+const right = document.querySelector('.arrow.right');
+
+function showCategory(category){
+  products.forEach(p=>{
+    if(p.classList.contains(category)){
+      p.style.display='block';
+    } else {
+      p.style.display='none';
+    }
+  });
+  track.scrollLeft = 0; // reset scroll to start
+}
+
+// Default show first category
+showCategory('festive');
+
+// Tab click event
+tabs.forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const category = tab.getAttribute('data-category');
+    showCategory(category);
+  });
+});
+
+// Arrows
+left.onclick = () => track6.scrollBy({ left: -300, behavior: 'smooth' });
+right.onclick = () => track6.scrollBy({ left: 300, behavior: 'smooth' });
+
+// Drag / Swipe
+let isDown3 = false, startX3, scrollLeft;
+track.addEventListener('mousedown', e => { isDown=true; startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft;});
+track.addEventListener('mouseleave',()=>isDown=false);
+track.addEventListener('mouseup',()=>isDown=false);
+track.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); const x=e.pageX-track.offsetLeft; const walk=(x-startX)*1.5; track.scrollLeft=scrollLeft-walk;});
+track.addEventListener('touchstart', e => startX = e.touches[0].pageX - track.offsetLeft);
+track.addEventListener('touchmove', e => { const x = e.touches[0].pageX - track.offsetLeft; track.scrollLeft -= (x - startX); startX = x; });
+</script>
+
+
+</body>
+</html>
