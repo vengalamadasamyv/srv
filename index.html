@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARRS Silks Header</title>
+<title>Sri Padma Vilas</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -191,7 +191,7 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
   overflow:hidden;
 }
 
-.carousel-track{
+.hero-track{
   display:flex;
   height:100%;
   transition:transform 0.6s ease;
@@ -290,7 +290,7 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 .welcome-srv{
   position:relative;
   background:#fbf7f2;
-  padding:90px 20px 0;
+  padding:90px 20px;
   overflow:hidden;
 }
 
@@ -341,7 +341,7 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 
 /* Offer Strip */
 .offer-strip{
-  margin-top:80px;
+  margin-top:0px;
   background:#fde6c5;
   overflow:hidden;
   border-top:1px solid #e5c28a;
@@ -370,7 +370,7 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 /* Responsive */
 @media(max-width:768px){
   .welcome-srv{
-    padding:60px 16px 0;
+    padding:60px 16px;
   }
 
   .welcome-content h2{
@@ -610,6 +610,135 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 }
 
 
+
+.arrs-footer{
+  background:#fde6c5;
+  font-family:'Poppins',sans-serif;
+  color:#6b2b1a;
+  position:relative;
+  overflow:hidden;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr 1.2fr;
+  gap:40px;
+  padding:70px 8%;
+  position:relative;
+  z-index:2;
+}
+
+.footer-brand{
+  text-align:left;
+}
+
+.footer-logo{
+  max-width:170px;
+  margin-bottom:20px;
+}
+
+.social-icons{
+  display:flex;
+  gap:18px;
+}
+
+.social-icons a{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#7a0c0c;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  transition:.3s;
+}
+
+.social-icons a:hover{
+  background:#a31616;
+}
+
+.footer-col h4{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  margin-bottom:18px;
+  color:#7a0c0c;
+}
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-col li{
+  margin-bottom:10px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.footer-col li:hover{
+  color:#7a0c0c;
+}
+
+.footer-col p{
+  font-size:15px;
+  line-height:1.7;
+}
+
+.footer-col .muted{
+  font-size:13px;
+  opacity:.8;
+}
+
+.mt{
+  margin-top:25px;
+}
+
+/* TEMPLE ART BACKGROUND */
+.footer-art{
+  height:260px;
+  background:url('./asset/temple-art.png') repeat-x bottom center;
+  background-size:contain;
+  opacity:.35;
+}
+
+/* COPYRIGHT */
+.footer-bottom{
+  background:#7a0c0c;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:992px){
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:576px){
+  .footer-top{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .footer-brand{
+    text-align:center;
+  }
+
+  .social-icons{
+    justify-content:center;
+  }
+
+  .footer-art{
+    height:180px;
+  }
+}
+
+
 </style>
 </head>
 
@@ -696,7 +825,7 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 
 <!-- hero secton -->
  <section class="hero-carousel">
-  <div class="carousel-track">
+  <div class="hero-track">
 
     <div class="slide active">
       <img src="./asset/1.svg" alt="">
@@ -745,6 +874,9 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
     </p>
   </div>
 
+
+
+</section>
   <!-- Offer Marquee -->
   <div class="offer-strip">
     <div class="offer-track">
@@ -773,8 +905,6 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
       <span>FESTIVAL OFFER</span>
     </div>
   </div>
-
-</section>
 
 <!-- collection -->
  <section class="collections">
@@ -864,72 +994,30 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 
       <!-- Product Card 1 -->
       <div class="product-card">
-        <img src="orange-green-silk.jpg" alt="Orange and Green 9 Yards Pure Silk Saree">
+        <img src="./asset/pro1.jpg" alt="Orange and Green 9 Yards Pure Silk Saree">
         <h3>Orange and Green 9 Yards Pure Silk Saree</h3>
         <p class="price"><span class="original">₹10,650.00</span> ₹9,585.00</p>
       </div>
 
       <!-- Product Card 2 -->
       <div class="product-card">
-        <img src="light-green-brick.jpg" alt="Light Green and Brick 9 Yards Pure Silk Saree">
+        <img src="./asset/pro2.jpg" alt="Light Green and Brick 9 Yards Pure Silk Saree">
         <h3>Light Green and Brick 9 Yards Pure Silk Saree</h3>
         <p class="price"><span class="original">₹10,450.00</span> ₹9,405.00</p>
       </div>
 
       <!-- Product Card 3 -->
       <div class="product-card">
-        <img src="lotus-pink.jpg" alt="Lotus Pink and Dark Green 9 Yards Pure Silk Saree">
+        <img src="./asset/pro3.jpg" alt="Lotus Pink and Dark Green 9 Yards Pure Silk Saree">
         <h3>Lotus Pink and Dark Green 9 Yards Pure Silk Saree</h3>
         <p class="price"><span class="original">₹11,950.00</span> ₹10,755.00</p>
       </div>
 
       <!-- Product Card 4 -->
       <div class="product-card">
-        <img src="orange-silk.jpg" alt="Orange 9 Yards Pure Silk Saree">
+        <img src="./asset/pro4.jpg" alt="Orange 9 Yards Pure Silk Saree">
         <h3>Orange 9 Yards Pure Silk Saree</h3>
         <p class="price"><span class="original">₹11,950.00</span> ₹10,755.00</p>
-      </div>
-
-      <!-- Product Card 5 -->
-      <div class="product-card">
-        <img src="product5.jpg" alt="Product 5">
-        <h3>Product 5 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
-      </div>
-
-      <!-- Product Card 6 -->
-      <div class="product-card">
-        <img src="product6.jpg" alt="Product 6">
-        <h3>Product 6 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
-      </div>
-
-      <!-- Product Card 7 -->
-      <div class="product-card">
-        <img src="product7.jpg" alt="Product 7">
-        <h3>Product 7 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
-      </div>
-
-      <!-- Product Card 8 -->
-      <div class="product-card">
-        <img src="product8.jpg" alt="Product 8">
-        <h3>Product 8 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
-      </div>
-
-      <!-- Product Card 9 -->
-      <div class="product-card">
-        <img src="product9.jpg" alt="Product 9">
-        <h3>Product 9 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
-      </div>
-
-      <!-- Product Card 10 -->
-      <div class="product-card">
-        <img src="product10.jpg" alt="Product 10">
-        <h3>Product 10 Name</h3>
-        <p class="price"><span class="original">₹XX,XXX</span> ₹XX,XXX</p>
       </div>
 
     </div>
@@ -939,6 +1027,70 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 </section>
 
 
+<footer class="arrs-footer">
+  <div class="footer-top">
+
+    <!-- LOGO & SOCIAL -->
+    <div class="footer-brand">
+      <img src="./asset/main logo.png" alt="srv Silks Logo" class="footer-logo">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>About Us</li>
+        <li>Categories</li>
+        <li>Store Location</li>
+        <li>Track Order</li>
+        <li>Contact Us</li>
+        <li>Bulk Order</li>
+      </ul>
+    </div>
+
+    <!-- POLICIES -->
+    <div class="footer-col">
+      <h4>Policies and Guidelines</h4>
+      <ul>
+        <li>Terms & Condition</li>
+        <li>Privacy Policy</li>
+        <li>Return Policy</li>
+        <li>Shipping Policy</li>
+        <li>Contact Information</li>
+      </ul>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="footer-col">
+      <h4>Address</h4>
+      <p>
+        No 7,South Car Street,<br>
+        Tirunelveli<br>
+        <span class="muted">(Near Nellaiappar Temple)</span>
+      </p>
+
+      <h4 class="mt">Contacts</h4>
+      <p>
+        Email: <b>info@sripadmavilas.com</b><br>
+        WhatsApp: <b>+91 96554 50999</b>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- TEMPLE ILLUSTRATION -->
+  <div class="footer-art"></div>
+
+  <!-- COPYRIGHT -->
+  <div class="footer-bottom">
+    © 2026 Sri Padma Vilas. ALL RIGHTS RESERVED.
+  </div>
+</footer>
 
 
 <!-- WHATSAPP -->
@@ -947,214 +1099,136 @@ header.sticky{box-shadow:0 4px 15px rgba(0,0,0,.15)}
 </a>
 
 <script>
+/* ================= HEADER ================= */
 function openMenu(){
   document.getElementById("mobileMenu").classList.add("active");
 }
 function closeMenu(){
   document.getElementById("mobileMenu").classList.remove("active");
 }
-
 function openSearch(){
   document.getElementById("searchBox").style.display="flex";
 }
 document.getElementById("searchBox").onclick=e=>{
   if(e.target.id==="searchBox") e.target.style.display="none";
 };
-
 window.addEventListener("scroll",()=>{
   document.getElementById("mainHeader")
     .classList.toggle("sticky",window.scrollY>20);
 });
 </script>
 
+<!-- ================= HERO CAROUSEL ================= -->
+<script>
+const heroTrack = document.querySelector('.hero-carousel .hero-track');
+const heroSlides = document.querySelectorAll('.hero-carousel .slide');
+const heroPrev = document.querySelector('.hero-carousel .prev');
+const heroNext = document.querySelector('.hero-carousel .next');
+const dotsContainer = document.querySelector('.hero-carousel .dots');
 
-<!-- hero section -->
- <script>
-const track = document.querySelector('.carousel-track');
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const dotsContainer = document.querySelector('.dots');
+let heroIndex = 0;
+let heroStartX = 0;
+let heroDragging = false;
 
-let index = 0;
-let startX = 0;
-let isDragging = false;
-
-// Create dots
-slides.forEach((_, i)=>{
-  const dot = document.createElement('span');
-  dot.addEventListener('click', ()=>moveToSlide(i));
+// dots
+heroSlides.forEach((_,i)=>{
+  const dot=document.createElement('span');
+  dot.onclick=()=>moveHero(i);
   dotsContainer.appendChild(dot);
 });
-updateDots();
+updateHeroDots();
 
-function moveToSlide(i){
-  index = i;
-  track.style.transform = `translateX(-${index * 100}%)`;
-  updateDots();
+function moveHero(i){
+  heroIndex=i;
+  heroTrack.style.transform=`translateX(-${i*100}%)`;
+  updateHeroDots();
 }
-
-function updateDots(){
-  document.querySelectorAll('.dots span').forEach((dot,i)=>{
-    dot.classList.toggle('active', i===index);
+function updateHeroDots(){
+  dotsContainer.querySelectorAll('span').forEach((d,i)=>{
+    d.classList.toggle('active',i===heroIndex);
   });
 }
+heroNext.onclick=()=>moveHero((heroIndex+1)%heroSlides.length);
+heroPrev.onclick=()=>moveHero((heroIndex-1+heroSlides.length)%heroSlides.length);
+setInterval(()=>heroNext.click(),5000);
 
-nextBtn.onclick = ()=>moveToSlide((index+1)%slides.length);
-prevBtn.onclick = ()=>moveToSlide((index-1+slides.length)%slides.length);
-
-// Auto slide
-setInterval(()=>nextBtn.click(), 5000);
-
-// Drag / Swipe
-track.addEventListener('mousedown', e=>{
-  isDragging=true;
-  startX=e.pageX;
+// drag / swipe
+heroTrack.addEventListener('mousedown',e=>{
+  heroDragging=true; heroStartX=e.pageX;
 });
-
-track.addEventListener('mouseup', e=>{
-  if(!isDragging) return;
-  let diff = e.pageX-startX;
-  if(diff>80) prevBtn.click();
-  if(diff<-80) nextBtn.click();
-  isDragging=false;
+heroTrack.addEventListener('mouseup',e=>{
+  if(!heroDragging) return;
+  const diff=e.pageX-heroStartX;
+  if(diff>80) heroPrev.click();
+  if(diff<-80) heroNext.click();
+  heroDragging=false;
 });
-
-track.addEventListener('touchstart', e=>{
-  startX=e.touches[0].clientX;
-});
-
-track.addEventListener('touchend', e=>{
-  let diff = e.changedTouches[0].clientX-startX;
-  if(diff>60) prevBtn.click();
-  if(diff<-60) nextBtn.click();
+heroTrack.addEventListener('touchstart',e=>heroStartX=e.touches[0].clientX);
+heroTrack.addEventListener('touchend',e=>{
+  const diff=e.changedTouches[0].clientX-heroStartX;
+  if(diff>60) heroPrev.click();
+  if(diff<-60) heroNext.click();
 });
 </script>
 
-<!-- collection scroll -->
- <script>
-const track1 = document.querySelector('.collection-track');
-const left = document.querySelector('.arrow.left');
-const right = document.querySelector('.arrow.right');
-
-left.onclick = () => {
-  track1.scrollBy({ left: -400, behavior: 'smooth' });
-};
-
-right.onclick = () => {
-  track1.scrollBy({ left: 400, behavior: 'smooth' });
-};
-
-// Drag to scroll (desktop)
-let isDown = false;
-let startX1;
-let scrollLeft;
-
-track.addEventListener('mousedown', e => {
-  isDown = true;
-  startX1 = e.pageX - track.offsetLeft;
-  scrollLeft = track1.scrollLeft;
-});
-
-track1.addEventListener('mouseleave', () => isDown = false);
-track1.addEventListener('mouseup', () => isDown = false);
-
-track1.addEventListener('mousemove', e => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - track1.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  track1.scrollLeft = scrollLeft - walk;
-});
-</script>
-
-<!-- product start -->
- <script>
-const track2 = document.querySelector('.carousel-track');
-const left = document.querySelector('.arrow.left');
-const right = document.querySelector('.arrow.right');
-
-left.onclick = () => {
-  track2.scrollBy({ left: -300, behavior: 'smooth' });
-};
-
-right.onclick = () => {
-  track2.scrollBy({ left: 300, behavior: 'smooth' });
-};
-
-// Drag / Swipe to scroll
-let isDown0 = false;
-let startX0;
-let scrollLeft0;
-
-track2.addEventListener('mousedown', e => {
-  isDown0 = true;
-  startX0 = e.pageX - track2.offsetLeft;
-  scrollLeft0 = track2.scrollLeft;
-});
-
-track2.addEventListener('mouseleave', () => isDown0 = false);
-track2.addEventListener('mouseup', () => isDown0 = false);
-track2.addEventListener('mousemove', e => {
-  if(!isDown0) return;
-  e.preventDefault();
-  const x = e.pageX - track2.offsetLeft;
-  const walk = (x - startX0) * 1.5;
-  track2.scrollLeft = scrollLeft0 - walk;
-});
-
-// Mobile touch swipe
-track2.addEventListener('touchstart', e => startX0 = e.touches[0].pageX - track2.offsetLeft);
-track2.addEventListener('touchmove', e => {
-  const x = e.touches[0].pageX - track2.offsetLeft;
-  track2.scrollLeft -= (x - startX0);
-  startX0 = x;
-});
-</script>
+<!-- ================= COLLECTION SCROLL ================= -->
 <script>
-const tabs = document.querySelectorAll('.tab');
-const products = document.querySelectorAll('.product-card');
-const track6 = document.querySelector('.carousel-track');
-const left = document.querySelector('.arrow.left');
-const right = document.querySelector('.arrow.right');
+const colTrack = document.querySelector('.collection-track');
+const colLeft = document.querySelector('.collections .arrow.left');
+const colRight = document.querySelector('.collections .arrow.right');
 
-function showCategory(category){
-  products.forEach(p=>{
-    if(p.classList.contains(category)){
-      p.style.display='block';
-    } else {
-      p.style.display='none';
-    }
-  });
-  track.scrollLeft = 0; // reset scroll to start
-}
+colLeft.onclick=()=>colTrack.scrollBy({left:-400,behavior:'smooth'});
+colRight.onclick=()=>colTrack.scrollBy({left:400,behavior:'smooth'});
 
-// Default show first category
-showCategory('festive');
+// drag scroll
+let colDown=false,colStartX,colScroll;
+colTrack.addEventListener('mousedown',e=>{
+  colDown=true;
+  colStartX=e.pageX;
+  colScroll=colTrack.scrollLeft;
+});
+colTrack.addEventListener('mouseup',()=>colDown=false);
+colTrack.addEventListener('mouseleave',()=>colDown=false);
+colTrack.addEventListener('mousemove',e=>{
+  if(!colDown) return;
+  e.preventDefault();
+  colTrack.scrollLeft=colScroll-(e.pageX-colStartX)*1.5;
+});
+</script>
 
-// Tab click event
-tabs.forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    tabs.forEach(t=>t.classList.remove('active'));
-    tab.classList.add('active');
-    const category = tab.getAttribute('data-category');
-    showCategory(category);
-  });
+<!-- ================= PRODUCT CAROUSEL ================= -->
+<script>
+const prodTrack = document.querySelector('.product-carousel-section .carousel-track');
+const prodLeft = document.querySelector('.product-carousel-section .arrow.left');
+const prodRight = document.querySelector('.product-carousel-section .arrow.right');
+
+prodLeft.onclick=()=>prodTrack.scrollBy({left:-300,behavior:'smooth'});
+prodRight.onclick=()=>prodTrack.scrollBy({left:300,behavior:'smooth'});
+
+// drag / swipe
+let prodDown=false,prodStartX,prodScroll;
+prodTrack.addEventListener('mousedown',e=>{
+  prodDown=true;
+  prodStartX=e.pageX;
+  prodScroll=prodTrack.scrollLeft;
+});
+prodTrack.addEventListener('mouseup',()=>prodDown=false);
+prodTrack.addEventListener('mouseleave',()=>prodDown=false);
+prodTrack.addEventListener('mousemove',e=>{
+  if(!prodDown) return;
+  e.preventDefault();
+  prodTrack.scrollLeft=prodScroll-(e.pageX-prodStartX)*1.5;
 });
 
-// Arrows
-left.onclick = () => track6.scrollBy({ left: -300, behavior: 'smooth' });
-right.onclick = () => track6.scrollBy({ left: 300, behavior: 'smooth' });
-
-// Drag / Swipe
-let isDown3 = false, startX3, scrollLeft;
-track.addEventListener('mousedown', e => { isDown=true; startX=e.pageX-track.offsetLeft; scrollLeft=track.scrollLeft;});
-track.addEventListener('mouseleave',()=>isDown=false);
-track.addEventListener('mouseup',()=>isDown=false);
-track.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); const x=e.pageX-track.offsetLeft; const walk=(x-startX)*1.5; track.scrollLeft=scrollLeft-walk;});
-track.addEventListener('touchstart', e => startX = e.touches[0].pageX - track.offsetLeft);
-track.addEventListener('touchmove', e => { const x = e.touches[0].pageX - track.offsetLeft; track.scrollLeft -= (x - startX); startX = x; });
+// mobile swipe
+prodTrack.addEventListener('touchstart',e=>prodStartX=e.touches[0].pageX);
+prodTrack.addEventListener('touchmove',e=>{
+  const x=e.touches[0].pageX;
+  prodTrack.scrollLeft-=x-prodStartX;
+  prodStartX=x;
+});
 </script>
+
 
 
 </body>
